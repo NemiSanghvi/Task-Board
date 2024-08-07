@@ -16,9 +16,7 @@ function Card({ data, reference, onToggle }) {
           <button onClick={() => onToggle(data)}>
             {data.done ? <SiTicktick /> : <RiCheckboxBlankCircleLine />}
           </button>
-          {/* <button onClick={() => data.done == true ? false : true}>
-            
-          </button> */}
+        
         </div>
         <div className={`mt-4 p-2 w-full ${data.done ? 'bg-green-500' : ''}`}></div>
       </div>
