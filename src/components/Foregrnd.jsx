@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import Card from './Card'
+import Button from './Button';
 
 function Foregrnd() {
   // const data= [
@@ -36,12 +37,18 @@ function Foregrnd() {
   };
 
 
+
+
   return (
-    <div ref={ref} className='fixed top-0 left-0 z-[3] w-full h-full flex gap-8 flex-wrap bg-slate-200/50 '>
-      {data.map((items, index) => (
-        <Card data={items} reference={ref} onToggle={handleToggle} />
-      ))}
-    </div>
+    <>
+      <div ref={ref} className='fixed top-0 left-0 z-[3] w-full h-full flex gap-8 flex-wrap bg-slate-200/50 '>
+        {data.map((items, index) => (
+          <Card data={items} reference={ref} onToggle={handleToggle} />
+        ))}
+      </div>
+      <Button setData={setData} data={data} /> {/* Add Button component */}
+
+    </>
   )
 }
 
