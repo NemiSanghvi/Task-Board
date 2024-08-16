@@ -8,6 +8,7 @@ function Backgrnd() {
         <h1 className='absolute top-1/2  left-1/2 -translate-x-[50%] -translate-y-[50%] text-9xl leading-none tracking-tight text-sky-900'>
           Notes
         </h1>
+
       </div>
     </>
   )

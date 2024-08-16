@@ -8,7 +8,7 @@ function Button({ setData, data }) {
 
   const handleAddTask = () => {
     if (!desc.trim()) {
-      console.error('Description cannot be empty');
+      alert('Description cannot be empty');
       return;
     }
 
@@ -28,7 +28,7 @@ function Button({ setData, data }) {
       </button>
 
       {showForm && (
-        <div className="fixed bottom-20 right-4 p-4 bg-white shadow-lg rounded-lg z-[5]">
+        <div className="fixed bottom-20 right-4 p-4  text-white bg-sky-900/30 shadow-lg rounded-lg z-[5]">
           <h3 className="text-lg font-semibold mb-2">Add New Task</h3>
           <form
             onSubmit={(e) => {
@@ -42,7 +42,7 @@ function Button({ setData, data }) {
                 type="text"
                 value={desc}
                 onChange={(e) => setDesc(e.target.value)}
-                className="border border-gray-300 rounded p-2 w-full"
+                className="border text-black border-gray-300 rounded p-2 w-full"
               />
             </div>
             <div className="mb-2">
@@ -50,7 +50,7 @@ function Button({ setData, data }) {
               <select
                 value={relevance}
                 onChange={(e) => setRelevance(e.target.value)}
-                className="border border-gray-300 rounded p-2 w-full"
+                className="border text-black   border-gray-300 rounded p-2 w-full"
               >
                 <option value="Low">Low</option>
                 <option value="Medium">Medium</option>
@@ -66,7 +66,7 @@ function Button({ setData, data }) {
             <button
               type="button"
               onClick={() => setShowForm(false)}
-              className="bg-gray-300 text-gray-700 p-2 rounded hover:bg-gray-400 transition-all"
+              className="bg-red-600 text-white p-2 rounded hover:bg-gray-400 transition-all"
             >
               Cancel
             </button>
