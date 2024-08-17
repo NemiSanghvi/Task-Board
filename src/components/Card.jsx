@@ -32,4 +32,4 @@ function Card({ data, reference, onToggle, onDelete }) {
   )
 }
 
-export default Card
+export default Card;

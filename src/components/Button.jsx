@@ -4,7 +4,7 @@ import { FaPlus } from "react-icons/fa";
 function Button({ setData, data }) {
   const [showForm, setShowForm] = useState(false);
   const [desc, setDesc] = useState('');
-  const [relevance, setRelevance] = useState('Low');
+  const [relevance, setRelevance] = useState('Important');
 
   const handleAddTask = () => {
     if (!desc.trim()) {
@@ -79,29 +79,3 @@ function Button({ setData, data }) {
 
 export default Button;
 
-
-// import React from 'react'
-// import { FaPlus } from "react-icons/fa";
-
-// function Button({ setData, data }) {
-
-//   const handleAddTask = () => {
-//     if (!Array.isArray(data)) {
-//       console.error('Data is not an array:', data);
-//       return;
-//     }
-
-//     setData([...data, { desc: "New Task", relevance: "Low", done: false }]);
-//     console.log("New task added");
-//   }
-//   return (
-//     <button
-//       onClick={() => handleAddTask()}
-//       className="fixed bottom-4 right-4 p-4 bg-blue-500 text-white rounded-full z-[4] shadow-lg hover:bg-blue-600 transition-all"
-//     >
-//       <FaPlus size={28} />
-//     </button>
-//   )
-// }
-
-// export default Button
