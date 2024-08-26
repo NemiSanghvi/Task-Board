@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Card from './Card';
 import Button from './Button';
 import Modal from './Modal';
@@ -14,8 +14,19 @@ function Foregrnd() {
     { desc: "This is dummy", relevance: "Important", done: true },
   ];
 
-  const [data, setData] = useState(initialData);
+  const [data, setData] = useState(() => {
+
+    const savedData = localStorage.getItem('taskData');
+    return savedData ? JSON.parse(savedData) : initialData;
+  });
+
+
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+
+    localStorage.setItem('taskData', JSON.stringify(data));
+  }, [data]);
 
   const handleToggle = (item) => {
     const updatedData = data.map(d =>
